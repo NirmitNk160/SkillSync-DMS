@@ -1,0 +1,166 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SkillSync | Career Matcher</title>
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="logo">Skill<span>Sync</span></div>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#matcher">Find Opportunities</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="tagline">YOUR SKILLS. YOUR FUTURE.</p>
+
+        <h1>
+          Find opportunities that<br />
+          <span>match your skills.</span>
+        </h1>
+
+        <p class="description">
+          Discover internships and jobs that match your technical skills
+          using mathematical set operations.
+        </p>
+
+        <a href="#matcher" class="hero-btn">Find My Match →</a>
+      </div>
+    </section>
+
+    <!-- Career Matcher -->
+    <section class="matcher" id="matcher">
+      <div class="section-heading">
+        <p class="tagline">CAREER MATCHING</p>
+        <h2>Discover Your Opportunities</h2>
+        <p>Enter your skills separated by commas.</p>
+      </div>
+
+      <div class="input-card">
+        <label for="skills">Your Technical Skills</label>
+
+        <input
+          type="text"
+          id="skills"
+          placeholder="Example: Python, Java, MySQL, HTML"
+        />
+
+        <button onclick="findMatches()">Find Matching Jobs</button>
+
+        <p class="hint">Try: Python, Java, MySQL, HTML, CSS</p>
+        <p id="error"></p>
+      </div>
+
+      <!-- Statistics -->
+      <div id="stats" class="stats-grid" style="display: none"></div>
+
+      <!-- Search and Reset -->
+      <div id="job-search" style="display: none">
+        <input
+          type="text"
+          id="searchJob"
+          placeholder="Search jobs by title or company..."
+          oninput="filterJobs()"
+        />
+
+        <button id="resetBtn" onclick="resetSkillSync()">
+          ↻ Reset Search
+        </button>
+      </div>
+
+      <!-- Job Results -->
+      <div id="results"></div>
+    </section>
+
+    <!-- About SkillSync -->
+    <section class="about" id="about">
+      <p class="tagline">ABOUT SKILLSYNC</p>
+
+      <h2>Bridging Skills with Opportunities</h2>
+
+      <p class="about-description">
+        SkillSync is a skill-based career matching platform developed
+        as a case study for Discrete Mathematical Structures. It helps
+        students discover internships and job opportunities based on
+        their technical skills. Using Set Theory, SkillSync identifies
+        matching skills, highlights missing requirements, and calculates
+        a match percentage.
+      </p>
+
+      <!-- Set Theory Concepts -->
+      <div class="concepts">
+        <div class="concept-card">
+          <h3>Set Intersection</h3>
+
+          <p>
+            Identifies the skills shared by the student and the job
+            requirements.
+          </p>
+
+          <code>A ∩ B</code>
+        </div>
+
+        <div class="concept-card">
+          <h3>Set Difference</h3>
+
+          <p>
+            Identifies the skills required by the job but missing
+            from the student.
+          </p>
+
+          <code>B − A</code>
+        </div>
+
+        <div class="concept-card">
+          <h3>Cardinality</h3>
+
+          <p>
+            Counts matching skills and helps calculate the overall
+            match percentage.
+          </p>
+
+          <code>|A ∩ B|</code>
+        </div>
+      </div>
+
+      <!-- Project Goal -->
+      <div class="about-highlight">
+        <h3>Our Goal</h3>
+
+        <p>
+          To simplify career discovery for students and demonstrate
+          how mathematical concepts can solve real-world problems.
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <h3>SkillSync</h3>
+
+      <p>
+        Discrete Mathematical Structures — Set Theory Application
+      </p>
+
+      <p>Academic Case Study Project</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+  </body>
+</html>

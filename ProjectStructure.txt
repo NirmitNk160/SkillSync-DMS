@@ -1,0 +1,11 @@
+--- Workspace: SkillSync ---
+
+📂 SkillSync
+    📄 app.py
+    📄 requirements.txt
+    📂 static
+        📄 script.js
+        📄 style.css
+    📂 templates
+        📄 index.html
+    
